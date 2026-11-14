@@ -1,0 +1,13 @@
+void deleteFront(void) {
+    if (isEmpty()) {
+        printf("Deque underflow\n");
+        return;
+    }
+    printf("Deleted %d from front\n", deque[front]);
+    if (front == rear)
+        front = rear = -1;
+    else if (front == MAX - 1)
+        front = 0;
+    else
+        front++;
+}

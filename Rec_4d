@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int fibonacci(int n) {
+    if (n == 1)
+        return 0;
+    if (n == 2)
+        return 1;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+void printFibonacci(int n) {
+    if (n == 0)
+        return;
+    printFibonacci(n - 1);
+    printf("%d ", fibonacci(n));
+}
+
+int main(void) {
+    int n;
+
+    printf("Enter number of terms: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("N must be positive.\n");
+        return 1;
+    }
+
+    printf("Fibonacci series: ");
+    printFibonacci(n);
+    printf("\n");
+    return 0;
+}

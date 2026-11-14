@@ -1,0 +1,13 @@
+void insertRear(int value) {
+    if (isFull()) {
+        printf("Deque overflow\n");
+        return;
+    }
+    if (isEmpty())
+        front = rear = 0;
+    else if (rear == MAX - 1)
+        rear = 0;
+    else
+        rear++;
+    deque[rear] = value;
+}

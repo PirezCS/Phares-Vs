@@ -1,0 +1,13 @@
+void insertFront(int value) {
+    if (isFull()) {
+        printf("Deque overflow\n");
+        return;
+    }
+    if (isEmpty())
+        front = rear = 0;
+    else if (front == 0)
+        front = MAX - 1;
+    else
+        front--;
+    deque[front] = value;
+}
